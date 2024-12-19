@@ -4,10 +4,8 @@ const mongoose = require("mongoose");
 const app = require("./app");
 
 dotenv.config({ path: "./config.env" });
-// const { ServerApiVersion } = require("mongodb");
 
 const mongoURI = process.env.MONGO_URI;
-
 async function connectToDatabase() {
   try {
     await mongoose.connect(mongoURI);
@@ -17,10 +15,7 @@ async function connectToDatabase() {
     process.exit(1); // Exit process if connection fails
   }
 }
-connectToDatabase();
-/////////////////////////
-
-////////////////////////
+// connectToDatabase();
 
 const port = 3000;
 const server = app.listen(port, () => {
